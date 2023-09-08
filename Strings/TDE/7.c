@@ -2,15 +2,28 @@
 
 //Utilizando a função "atoi" "array/string to a int"
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+
+int verifica_string(char st1[50], char st2[50]) {
+    char *resultado = strstr(st1, st2);
+
+    if (resultado) {
+        printf("%s\n", resultado);
+        int posicao = resultado - st1;
+        return posicao;
+    } else {
+        return -1;
+    }
+}
 
 int main() {
-    int numero = "12345";
+    char string1[50] = "me protegem da completa loucura.";
+    char string2[50] = "loucura.";
 
-    // Uso da função atoi
-    atoi(numero);
+    int possuiString = verifica_string(string1, string2);
 
-    printf("string como numero: %s\n", numero);
+    printf("%d", possuiString);
 
     return 0;
 }
+
