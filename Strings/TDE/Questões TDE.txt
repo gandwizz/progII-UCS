@@ -1,0 +1,34 @@
+1) Resolva os exercícios  1168 - LED e 3141 - Dúvida Etária no Beecrowd.
+
+2) Faça uma função que receba um string e retorne o comprimento da maior sequência de letras iguais em sequência no string.
+
+3) Faça uma função que receba um valor inteiro entre 0 e 99 e retorne (como parâmetro), um string com o valor por extenso. Ex: Se a função receber o valor 25, deve retornar o string "vinte e cinco".
+
+4) Faça um programa que leia uma frase com no máximo 100 palavras de tamanho não maior que 20, e escreva a lista de palavras diferentes da frase, com o número de ocorrências de cada palavra, em ordem alfabética. Considere que o string contem somente as palavras, separadas por espaços em branco, sem qualquer outro caracter de pontuação.
+
+5) Faça uma função que receba um valor inteiro e converta o valor para um string, retornando o string. Ex: se receber 45 deve retornar o string "45"
+
+6) Faça uma função que receba um string com uma sequência de caracteres representando um número (ex: "123") e retorne, como valor de retorno da função, o valor numérico equivalente.
+
+7) Faça uma função que receba dois strings st1 e st2, e verifique se o string st1 contém alguma ocorrência de st2, retornando a posição onde st2 foi encontrado, ou -1, caso st1 não contenha st2. 
+
+8) Faça uma função que receba um string e converta todos os seus caracteres minúsculos para caracteres maiúsculos.  
+
+Para quem preferir, identifiquei alguns exercícios de strings no Beecrowd que podem ser resolvidos com o que vimos em aula:
+
+1168 - LED
+3141 - Dúvida Etária
+1218 - Getline Three - Calçados
+1263 - Aliteração
+2174 - Coleção de Pomekon
+1551 - Frase Completa
+1192 - O jogo Matemático de Paula
+2728 - Grace Hopper, a Vovó do Cobol
+1234 - Sentença Dançante
+1235 - De Dentro para Fora
+2760 - Entrada e Saída de String
+2242 - Huaauhahhuahau
+1255 - Frequência de Letras
+1846 - Numero Para Nome
+2108 - Contando Caracters
+2253 - Validador de Senhas
