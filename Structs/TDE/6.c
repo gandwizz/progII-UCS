@@ -11,25 +11,26 @@ typedef struct st_aluno {
     char nome[41];
     float notas[QTDNOT];
     int faltas;
-}Aluno;
+} Aluno;
 
-int qtdAprovados(Aluno a){
+int qtdAprovados(Aluno a[QTDALU]) {
 
     int n_aprovados = 0;
-    for (int i = 0; i < QTDALU; i++){
-        
-        int mediaNotas = 0;
-        for (int j = 0; j < QTDNOT; j++){
-            mediaNotas += (a[i].notas[j]) / QTDNOT;
+    for (int i = 0; i < QTDALU; i++) {
+
+        int mediaNotas = 0;  // Inicialize fora do loop
+        for (int j = 0; j < QTDNOT; j++) {
+            mediaNotas += a[i].notas[j];
         }
-        
-        if(mediaNotas >= 6 && a[i].faltas <= 15){
+        mediaNotas /= QTDNOT;  // Calcule a média aqui
+
+        if (mediaNotas >= 6 && a[i].faltas <= 15) {
             n_aprovados++;
         }
     }
-    
+
     return n_aprovados;
-};
+}
 
 int main(void) {
     Aluno alunos[QTDALU] = {
@@ -45,8 +46,8 @@ int main(void) {
         {"Laura", {8.5, 9.0, 8.5}, 0}
     };
 
-
+    int resultado = qtdAprovados(alunos);
+    printf("%d alunos foram aprovados\n", resultado);  // Corrigido
 
     return 0;
 }
-
