@@ -48,7 +48,7 @@ int main()
     int numero; 
     scanf("%d", &numero);
 
-    if(numero < 0  || numero > 99){
+    if(numero < 0  || numero > 999){
         printf("Numero fora do intervalo suportado");
     }else{
         printf("%s\n", centenas(numero));
