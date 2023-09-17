@@ -52,8 +52,11 @@ FUNCIONARIO mais_velho(FUNCIONARIO *funcionarios, int numeroFuncionarios) {
 
     for (int i = 1; i < numeroFuncionarios; i++) {
         if (funcionarios[i].nascimento.ano < funcionario_mais_velho.nascimento.ano ||
+
             (funcionarios[i].nascimento.ano == funcionario_mais_velho.nascimento.ano && funcionarios[i].nascimento.mes < funcionario_mais_velho.nascimento.mes) ||
-            (funcionarios[i].nascimento.ano == funcionario_mais_velho.nascimento.ano && funcionarios[i].nascimento.mes == funcionario_mais_velho.nascimento.mes && funcionarios[i].nascimento.dia < funcionario_mais_velho.nascimento.dia)) {
+
+            (funcionarios[i].nascimento.ano == funcionario_mais_velho.nascimento.ano && funcionarios[i].nascimento.mes == funcionario_mais_velho.nascimento.mes && funcionarios[i].nascimento.dia < funcionario_mais_velho.nascimento.dia)) 
+            {
             funcionario_mais_velho = funcionarios[i];
         }
     }

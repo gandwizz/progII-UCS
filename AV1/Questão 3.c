@@ -25,7 +25,7 @@ char verificaOperacao(char *str) {
 
 int main(void) {
     char string[20];
-    printf("Digite a operação (ex: 10+16): ");
+    printf("Digite a operação (ex: /016): ");
     fgets(string, sizeof(string), stdin);
 
     char operacao = verificaOperacao(string);
