@@ -33,6 +33,7 @@ função é dado por: FUNCIONARIO mais_velho (FUNCIONARIO *vetor, int numeroFunc
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 typedef struct {
     int dia;
@@ -40,7 +41,7 @@ typedef struct {
     int ano;
 } DATA;
 
-typedef struct {
+typedef struct{
     int codigo;
     char nome[50];
     DATA nascimento;

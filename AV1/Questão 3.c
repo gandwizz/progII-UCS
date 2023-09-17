@@ -25,16 +25,18 @@ char verificaOperacao(char *str) {
 
 int main(void) {
     char string[20];
-    printf("Digite a operação (ex: /016): ");
+    printf("Digite a operação (ex: 10+16): ");
     fgets(string, sizeof(string), stdin);
 
     char operacao = verificaOperacao(string);
 
     if (operacao != '0') {
+
         char *p = strtok(string, "+-*/");
         float resultado = atof(p);
-
+        
         while (p != NULL) {
+            
             p = strtok(NULL, "+-*/");
             if (p != NULL) {
                 int numero = atoi(p);
