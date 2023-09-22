@@ -1,0 +1,39 @@
+&int -> passando endereço do ineiro;
+int *a = ponteiro de um inteiro;
+
+*p (ponteiro) recebe um &p (endereço)
+
+z[5] = {1,2,3,4,5}
+z -> passa o endereço imicial do vetor (por isso que qualquer alteração no vetor altera o valor dele globalmente).
+
+
+int a, *pta;
+pta=&a; // pta recebe o endere¸co da vari´avel a.
+*pta=5; // a vari´avel apontada por pta (ou seja, a vari´avel a,
+recebe 5)
+
+
+
+1) Seja o seguinte trecho de programa:
+int i=3,j=5;
+int *p, *q;
+p = &i;
+q = &j;
+
+ Qual ´e o valor das seguintes express˜oes ?
+ a) p == &i; // true
+
+ b) *p - *q; // (3) - (5) = 2
+
+ c) **&p // *& -> se anulam // **&p = *p -> 3
+
+ d) 3* - *p/(*q)+7  // ((3 * -(3)) / 5) + 7 ) = 6
+
+ resposta: 1, -2, 3, 6
+
+
+printf("%p", px); -> %p = printa o ponteiro em hexadecimal
+
+int funcao (*x, *y) -> funcao que permite retornar mais valores de uma forma (tendo o valor de endereço *x e *y os valores da variável pode ser alterada globalmente)
+
+
