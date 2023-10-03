@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #define N 5
 
@@ -16,18 +17,37 @@ typedef struct {
     float y;
 } PONTOS;
 
-void maior_distancia(PONTOS p[N], PONTOS *p1, PONTOS *p2){
 
+float distancia(PONTOS p1, PONTOS p2){
+    return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
+}
+
+void maior_distancia(PONTOS p[N], PONTOS *p1, PONTOS *p2){
+    float maxDistancia = 0;
+
+    for(int i = 0; i < N; i++){
+        for(int j = i+1 ; j < N; j++){
+            float dist = distancia(p[i], p[j]);
+
+            if(dist > maxDistancia){
+                maxDistancia = dist;
+                *p1 = p[i];
+                *p2 = p[j];
+            }
+        }
+    }
+    
 }
 
 int main(){
-    int p[N];
-    int *pontos = (int *)malloc(N * sizeof(int));
-    pontos = p;
+    PONTOS pontos[N];
+    PONTOS p1, p2; 
     
     for (int i = 0; i < N; i++){
-        scanf('%d', pontos[i]);
+        scanf('%f %f', &pontos[i].x, &pontos[i].y);
     }
     
+    maior_distancia(pontos, &p1, &p2);
     
+    printf("%f %f ", &p1, &p2);
 }
