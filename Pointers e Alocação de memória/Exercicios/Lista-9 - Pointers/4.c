@@ -18,7 +18,7 @@ int matriz(int *st[5][5], int *maior, int *coluna, int *linha){
         {
             if(st[i][j] > maior){
                 *linha = i;
-                *coluna = i;
+                *coluna = j;
                 *maior = st[i][j];
             } 
         }
