@@ -1,0 +1,2 @@
+// 1) Fazer uma função que retorne o apontador para uma string contendo as n primeiras letras maiúsculas. Caso n seja maior que 26, copie novamente as letras maiúsculas até atingir o valor de n.
+// Protótipo: char *letras(int n)
