@@ -97,34 +97,60 @@ A ordenação dos nomes pode ser feita na própria lista de structs recebida. Ab
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-typedef struct{
-  char nome[50];
-} ALUNO;
+struct st_aluno {
+    int codigo;
+    char nome[41];
+    float notas[3];
+    int faltas;
+};
+typedef struct st_aluno TIPOALUNO;
 
-void ordena_nomes( ALUNO *alunos, int nAlunos ){
-  ALUNO *nomes = (ALUNO*)malloc(nAlunos * sizeof(ALUNO)); 
+// Implementar a função nomes_dos_alunos
+char *nomes_dos_alunos(TIPOALUNO *alunos, int qtd){
   
-  //separar os nomes 
-  char p = strtok(alunos, ';');
-  int posicaoNomes = 0;
-  while( p != '\0' ){
-    nomes[posicaoNomes].nome = p;
-    p = strtok(alunos, NULL);
-    posicaoNomes++;
-  }
-
-  for(int i = 0; i < nAlunos; i++){
-    for(int j = i+1; i < nAlunos; j++){
-      if( strcmp(nomes[i].nome, nomes[j].nome) > 0){
-        char nomeAux[50];
-
-        strcpy(nomeAux, nomes[i].nome);
-        strcpy(nomes[i].nome, nomes[j].nome);
-        strcpy(nomes[j].nome, nomeAux);
+  // Ordenar a lista de alunos 
+  for(int i = 0; i < qtd; i++){
+    for(int j = i+1; j < qtd; j++){
+      if( strcmp(alunos[i].nome, alunos[j].nome) > 0 ){
+        TIPOALUNO aux = alunos[i];
+        alunos[i] = alunos[j];
+        alunos[j] = aux;
       }
     }
   }
 
+  //alocar dinamicamente uma string
+  char * nomes = (char*)malloc((41*qtd+1) * sizeof(char));
+  
+  nomes[0] = '\0';
+  //concatenar em uma string os alunos
+  for(int i = 0; i < qtd; i++){
+    strcat(nomes, alunos[i].nome);
+    if(i != (qtd - 1)){
+      strcat(nomes,";");
+    }
+  }
+  
+  return nomes;
+
 }
+
+int main() {
+    TIPOALUNO alunos[7]={
+      {  11, "Ana"       , {7.5, 8.2, 6.3}, 3 },
+      {  12, "Joao Pedro", {7.2, 8.1, 6.0}, 3 },
+      {  21, "Marcia",     {5.5, 6.2, 8.3}, 3 },
+      {  47, "Sandra",     {9.5, 8.5, 9.5}, 3 },
+      {  91, "Eduardo",    {7.1, 7.2, 8.7}, 3 },
+      {  92, "Paulo",      {6.0, 6.0, 6.0}, 3 },
+      {  95, "Maria",      {8.9, 9.2, 7.7}, 3 }
+    };
+    char *nomes;
+    nomes=nomes_dos_alunos(alunos,7);
+    printf("%s\n",nomes);
+    free(nomes);
+    return 0;
+}   
