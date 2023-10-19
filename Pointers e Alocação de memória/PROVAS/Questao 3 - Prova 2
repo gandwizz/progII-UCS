@@ -1,0 +1,65 @@
+/*
+3) (3.4 pontos) Fazer uma função escrita na linguagem de programação C que aloque dinamicamente e armazene em uma string os nomes dos alunos em ordem alfabética separados por ponto e vírgula. 
+A ordenação dos nomes pode ser feita na própria lista de structs recebida. Abaixo exemplo de um programa que utiliza essa função. Para esse exemplo deveria escrever “Ana;Eduardo;Joao;Pedro;Marcia;Maria;Paulo;Sandra”
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct st_aluno {
+    int codigo;
+    char nome[41];
+    float notas[3];
+    int faltas;
+};
+typedef struct st_aluno TIPOALUNO;
+
+// Implementar a função nomes_dos_alunos
+char *nomes_dos_alunos(TIPOALUNO *alunos, int qtd){
+  
+  // Ordenar a lista de alunos 
+  for(int i = 0; i < qtd; i++){
+    for(int j = i+1; j < qtd; j++){
+      if( strcmp(alunos[i].nome, alunos[j].nome) > 0 ){
+        TIPOALUNO aux = alunos[i];
+        alunos[i] = alunos[j];
+        alunos[j] = aux;
+      }
+    }
+  }
+
+  //alocar dinamicamente uma string
+  char * nomes = (char*)malloc((41*qtd+1) * sizeof(char));
+  
+  nomes[0] = '\0';
+  //concatenar em uma string os alunos
+  for(int i = 0; i < qtd; i++){
+    strcat(nomes, alunos[i].nome);
+
+    //faz o controle para não colocar o ";" ao final da string
+    if(i != (qtd - 1)){
+      strcat(nomes,";");
+    }
+  }
+  
+  return nomes;
+
+}
+
+int main() {
+    TIPOALUNO alunos[7]={
+      {  11, "Ana"       , {7.5, 8.2, 6.3}, 3 },
+      {  12, "Joao Pedro", {7.2, 8.1, 6.0}, 3 },
+      {  21, "Marcia",     {5.5, 6.2, 8.3}, 3 },
+      {  47, "Sandra",     {9.5, 8.5, 9.5}, 3 },
+      {  91, "Eduardo",    {7.1, 7.2, 8.7}, 3 },
+      {  92, "Paulo",      {6.0, 6.0, 6.0}, 3 },
+      {  95, "Maria",      {8.9, 9.2, 7.7}, 3 }
+    };
+    char *nomes;
+    nomes=nomes_dos_alunos(alunos,7);
+    printf("%s\n",nomes);
+    free(nomes);
+    return 0;
+}   

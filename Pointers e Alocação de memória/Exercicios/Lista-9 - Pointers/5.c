@@ -5,7 +5,7 @@
 #include <string.h>
 
 
-int matriz(int *st[5][5], int *minimax, int *coluna, int *linha){
+void matriz(int *st[5][5], int *minimax, int *coluna, int *linha){
 
     *minimax = st[0][0];
     *coluna = 0;

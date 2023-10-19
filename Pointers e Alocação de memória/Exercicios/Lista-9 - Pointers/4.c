@@ -6,7 +6,7 @@
 #include <string.h>
 
 
-int matriz(int *st[5][5], int *maior, int *coluna, int *linha){
+void matriz(int *st[5][5], int *maior, int *coluna, int *linha){
 
     *maior = st[0][0];
     *coluna = 0;
