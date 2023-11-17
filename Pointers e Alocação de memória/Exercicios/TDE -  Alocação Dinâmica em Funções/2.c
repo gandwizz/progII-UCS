@@ -6,7 +6,16 @@
 
 char *digitos(char *s){
   //recebe uma string que pode conter qualquer coisa "AbCdE1231908"
-  char *str = (char *) malloc((n+1) * sizeof(char));
+  
+  //obter o valor total de digitos para alocar um numero exato
+  int count = 0;
+  for(int i = 0; i < strlen(s); i++){
+    if( s[i] >= '0' && s[i] <= '9' ){
+      count++;
+    }
+  }
+
+  char *str = (char *) malloc( (count+1) * sizeof(char));
   int posicaoArray = 0;
   for(int i = 0; i < strlen(s); i++){
     if( s[i] >= '0' && s[i] <= '9' ){

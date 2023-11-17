@@ -14,7 +14,7 @@ int ehPrimo(int num){
   Por exemplo, se queremos verificar se 100 é primo, sabemos que os possíveis divisores estarão entre 2 e a raiz quadrada de 100, ou seja, entre 2 e 10. Se não encontrarmos nenhum divisor até 10, não encontraremos depois disso também.
   
   */
-  for(int i = 2; i*i < num; i++ ){
+  for(int i = 2; i*i <= num; i++ ){
     if(num % i == 0) return 0;
   }
 
