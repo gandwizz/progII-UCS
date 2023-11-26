@@ -23,3 +23,23 @@ fread() --> comando p/binário, retorna 0 no final do arquivo
 
 
 */
+
+
+/**LEITURA*/
+void main(){
+
+    FILE * arquivo;
+    int i;
+    arquivo = fopen("teste.txt", "rt");
+
+    if(arquivo == NULL){printf("Erro na abertura!\n");}
+    int valor;
+
+    while(fscanf(arquivo, "%d", &valor) != EOF)
+    for ( i = 0; i < 20; i++){
+        
+    }
+    
+
+    fclose(arquivo);
+}
