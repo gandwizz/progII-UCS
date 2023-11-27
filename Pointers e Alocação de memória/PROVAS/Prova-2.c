@@ -60,6 +60,7 @@ tnaonulo *naoNulo( int M[100][100] ){
     
     return p;
 }
+
 tnaonulo *naoNulo( int M[100][100] ){
 
     int count = 0;
