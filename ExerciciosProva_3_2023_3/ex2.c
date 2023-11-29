@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-void inverte(unsigned int *conjunto)
+void inverte(unsigned short *conjunto)
 {
-    unsigned int mascara;
+    unsigned short mascara;
     int i, j;
-    unsigned int maux = 0b00000000;
+    unsigned short maux = 0;
     for(i=0, j=15;i<16;i++, j--){
         mascara=0;
         mascara |= (1<<i);
         if((*conjunto&mascara)!=0)
-		    maux |= (1<<j);
+            maux |= (1<<j);
     }
     *conjunto=maux;
 }
 
-void mostrabin(unsigned int conjunto){
+void mostrabin(unsigned short conjunto){
 	int i;
-	for (i=31;i>=0;i--) {
+	for (i=15;i>=0;i--) {
 		printf("%d", conjunto >> i&1);
 	}
 }
 
 int main()
 {
-    unsigned int conjunto = 0b10000001;  
+    unsigned short conjunto = 15;  
     mostrabin(conjunto);
     printf("\n");
     inverte (&conjunto);
