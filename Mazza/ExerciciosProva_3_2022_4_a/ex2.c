@@ -43,8 +43,6 @@ int main () {
         if(cont > 1) {
             fputs(linha,arq2);
         }
-        
-        
     }
     
  

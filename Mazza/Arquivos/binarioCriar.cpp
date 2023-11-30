@@ -9,7 +9,7 @@ int main(){
 	
 	arq = fopen("dados.dat","wb");
 	for (int i=0; i<=100; i++) {
-			fwrite(&i,sizeof(i),1,arq);
+		fwrite(&i,sizeof(i),1,arq);
 	}
 
 
